@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Product</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .container {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 600px;
+            padding: 20px;
+        }
+
+        a {
+            display: inline-block;
+            margin-bottom: 20px;
+            text-decoration: none;
+            color: #007BFF;
+            font-size: 14px;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            text-align: center;
+            color: #007BFF;
+        }
+
+        .list-group {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .list-group-item {
+            background: #f9f9f9;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h3 {
+            margin: 0 0 10px;
+        }
+
+        h4 {
+            margin: 5px 0;
+            font-size: 18px;
+        }
+
+        .btn {
+            display: inline-block;
+            text-decoration: none;
+            padding: 10px 15px;
+            font-size: 14px;
+            border-radius: 4px;
+            cursor: pointer;
+            color: #fff;
+            border: none;
+        }
+
+        .btn-warning {
+            background-color: #FFC107;
+        }
+
+        .btn-warning:hover {
+            background-color: #e0a800;
+        }
+
+        .btn-danger {
+            background-color: #DC3545;
+        }
+
+        .btn-danger:hover {
+            background-color: #bd2130;
+        }
+
+        form {
+            display: inline-block;
+            margin-left: 10px;
+        }
+
+        .deleteForm button {
+            background-color: #DC3545;
+        }
+
+        .deleteForm button:hover {
+            background-color: #bd2130;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="/">Home</a>
+        <h1 class="page-header">Product Details</h1>
+        <ul class="list-group">
+            <li class="list-group-item">
+                <h3><strong><%= stock.product %>:</strong></h3>
+                <% if (stock.price) { %>
+                    <% if (stock.perkg) { %>
+                        <h4>¥<%= stock.price %>/kg</h4>
+                    <% } else { %>  
+                        <h4>¥<%= stock.price %></h4>
+                    <% } %>
+                <% } else { %>  
+                    <h4>No price available</h4>
+                <% } %>
+                <a class="btn btn-warning" href="<%= '/' + stock.id + '/edit' %>">Edit</a>
+                <form class="deleteForm" method="POST" action="<%= '/delete/' + stock.id %>">
+                    <button type="submit" class="btn btn-danger">Delete</button>
+                </form>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>

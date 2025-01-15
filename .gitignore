@@ -1,5 +1,5 @@
 node_modules
 .env
 breakdown.md
-Maruta-Suisan-data-Sheet1.csv
+csvToDB
 prisma
