@@ -6,6 +6,7 @@ let mainWindow = null
 function main() {
   mainWindow = new BrowserWindow()
   mainWindow.loadURL(`http://localhost:3000/`)
+  mainWindow.maximize()
   mainWindow.on('close', event => {
     mainWindow = null
   })

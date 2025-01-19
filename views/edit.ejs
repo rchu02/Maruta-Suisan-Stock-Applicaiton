@@ -93,31 +93,31 @@
 </head>
 <body>
     <div class="container">
-        <a href="/">Home</a>
-        <h1 class="page-header">Edit Product</h1>
+        <a href="/">ホームページ</a>
+        <h1 class="page-header">商品名詳細</h1>
         <form action="<%= '/update/' + stock.id %>" method="POST">
             <div class="form-group">
-                <label for="title">Name</label>
+                <label for="title">商品名</label>
                 <input type="text" name="name" id="titleInput" value="<%= stock.product %>" required>
             </div>
             <div class="form-group">
-                <label for="price">Price</label>
+                <label for="price">価格</label>
                 <input type="number" id="priceInput" name="price" step="0.01" value="<%= stock.price %>" required>
             </div>
             <div class="form-group">
-                <label>Perkg</label>
+                <label>㎏単価</label>
                 <div class="radio">
                     <label>
-                        <input type="radio" name="perkg" id="true" value="true" <%= stock.perkg ? 'checked' : '' %>> True
+                        <input type="radio" name="perkg" id="true" value="true" <%= stock.perkg ? 'checked' : '' %>> はい
                     </label>
                 </div>
                 <div class="radio">
                     <label>
-                        <input type="radio" name="perkg" id="false" value="false" <%= !stock.perkg ? 'checked' : '' %>> False
+                        <input type="radio" name="perkg" id="false" value="false" <%= !stock.perkg ? 'checked' : '' %>> いいえ
                     </label>
                 </div>
             </div>
-            <button type="submit" class="btn">Submit</button>
+            <button type="submit" class="btn">変更する</button>
         </form>
     </div>
 </body>

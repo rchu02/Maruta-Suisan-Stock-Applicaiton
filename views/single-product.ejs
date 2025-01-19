@@ -112,8 +112,8 @@
 </head>
 <body>
     <div class="container">
-        <a href="/">Home</a>
-        <h1 class="page-header">Product Details</h1>
+        <a href="/">ホームページ</a>
+        <h1 class="page-header">商品名詳細</h1>
         <ul class="list-group">
             <li class="list-group-item">
                 <h3><strong><%= stock.product %>:</strong></h3>
@@ -126,9 +126,9 @@
                 <% } else { %>  
                     <h4>No price available</h4>
                 <% } %>
-                <a class="btn btn-warning" href="<%= '/' + stock.id + '/edit' %>">Edit</a>
+                <a class="btn btn-warning" href="<%= '/' + stock.id + '/edit' %>">変更</a>
                 <form class="deleteForm" method="POST" action="<%= '/delete/' + stock.id %>">
-                    <button type="submit" class="btn btn-danger">Delete</button>
+                    <button type="submit" class="btn btn-danger">消去</button>
                 </form>
             </li>
         </ul>

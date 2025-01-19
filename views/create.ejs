@@ -81,26 +81,26 @@
 </head>
 <body>
     <div class="container">
-        <a href="/">Home</a>
-        <h1>Create New Product</h1>
+        <a href="/">ホームページ</a>
+        <h1>新商品名入力</h1>
 
         <form action="/new" method="POST">
             <div>
-                <label for="product-name">Product Name:</label>
+                <label for="product-name">商品名:</label>
                 <input type="text" id="product-name" name="productName" required>
             </div>
             <div>
-                <label for="price">Price:</label>
+                <label for="price">価格:</label>
                 <input type="number" id="price" name="price" step="0.01" required>
             </div>
             <div>
                 <label for="perkg">
                     <input type="checkbox" id="perkg" name="perkg" value="true">
-                    Sold Per Kg
+                    ㎏当たり
                 </label>
             </div>
             <div>
-                <button type="submit">Create Product</button>
+                <button type="submit">新商品名入力</button>
             </div>
         </form>
     </div>
