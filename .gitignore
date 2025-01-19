@@ -3,3 +3,4 @@ node_modules
 breakdown.md
 csvToDB
 prisma
+views/test.ejs

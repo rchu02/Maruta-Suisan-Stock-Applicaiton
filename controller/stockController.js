@@ -13,15 +13,20 @@ let stockController = {
     },
 
     getOne: async (req, res) => {
-        let stockToFind = parseInt(req.params.id);
-        const searchResult = await db.stock.findFirst({
-            where: {id: stockToFind}
-        });
+        try {
+            let stockToFind = parseInt(req.params.id);
+            console.log(stockToFind);
+            const searchResult = await db.stock.findFirst({
+                where: {id: stockToFind}
+            });
 
-        if (searchResult != undefined) {
-            res.render("single-product", { stock:  searchResult});
-        } else {
-            res.redirect("/");
+            if (searchResult != undefined) {
+                res.render("single-product", { stock:  searchResult});
+            } else {
+                res.redirect("/");
+            }
+        } catch (err) {
+            res.redirect("/")
         }
     },
 
@@ -54,7 +59,6 @@ let stockController = {
         let newProduct = req.body.name;
         let newPrice = parseInt(req.body.price);
         let newPerkg = req.body.perkg;
-        console.log(newPerkg)
 
         if (newPerkg == 'true') {
             newPerkg = true;
