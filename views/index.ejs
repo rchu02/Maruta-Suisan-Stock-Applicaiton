@@ -298,10 +298,6 @@
         }
     }
 
-    function alertBox() {
-      alert("Must have number inside of box!")
-    }
-
     let shoppingCart = [];
 
     function addToCart(id, name, price, perkg) {
@@ -309,7 +305,7 @@
       let quantity = parseFloat(input.value);
 
       if (!quantity) {
-        alertBox()
+        input.value = 1
       } else {
         if (perkg === "true") {
           quantity = Math.ceil(quantity * 100) / 100;
@@ -340,6 +336,9 @@
     let totalCost = 0;
 
     shoppingCart.forEach((item) => {
+      if (!item.quantity) {
+        item.quantity = 1
+      }
       let itemTotal = item.price * item.quantity;
       totalCost += itemTotal;
 
